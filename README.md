@@ -166,26 +166,6 @@ Column Descriptions:
 *   `GridSearchCV` was used for hyperparameter tuning to optimize model performance.
 *   The project includes detailed visualizations and performance metrics to evaluate model effectiveness.
 
-## 💻 Model Deployment Code:
-
-The following code snippet demonstrates how the full pipeline is created and the trained model is saved:
-
-python
-full_pipeline_with_clf = Pipeline([
-        ("preparation", preprocessor),
-        ("model", best_model)
-    ])
-
-full_pipeline_with_clf.fit(X, y)
-heart_break_classifier_model = full_pipeline_with_clf
-
-import joblib
-joblib.dump(heart_break_classifier_model, "heart_break_classifier_model.pkl")
-load_the_model = joblib.load("heart_break_classifier_model.pkl")
-accuracy = accuracy_score(y_test, best_lgb_model.predict(X_test))
-print(f'Accuracy: {accuracy:.2f}')
-
-
 
 ## 🎉 Conclusion
 
